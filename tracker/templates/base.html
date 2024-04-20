@@ -1,0 +1,110 @@
+
+<!doctype html>
+
+{% load static %} 
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Pricing example · Bootstrap v5.0</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/pricing/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="{% static 'assets/dist/css/bootstrap.min.css' %}">
+
+    <style>
+      /* https://png.pngtree.com/thumb_back/fh260/background/20201026/pngtree-futuristic-shape-abstract-background-chemistry-technology-concept-for-website-image_438818.jpg */
+      html,body {
+            /* height: 100%;
+            width: 100%; */
+            background-image: url("https://t4.ftcdn.net/jpg/02/75/28/95/360_F_275289557_YptaQZDnGnDkcgm8b792ItXOqvvkTQAr.jpg") !important;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .avatar {
+        width: 60px; /* Adjust as needed */
+        height: 60px; /* Adjust as needed */
+        border-radius: 50%; /* Make it circular */
+        overflow: hidden; /* Hide any overflow */
+        position: relative;
+    }
+
+    .avatar img {
+        width: 100%; /* Make the image fill the container */
+        height: 100%; /* Make the image fill the container */
+        object-fit: cover; /* Ensure the image covers the entire container */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.5); /* Center and zoom the image */
+        clip-path: polygon(28% 0%, 100% 0%, 100% 100%, 28% 100%, 28% 80%, 50% 80%, 50% 56%, 31% 56%, 31% 0%); /* Clip to show only the orange part */
+    }
+
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'pricing.css' %}">
+  </head>
+  <body>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="check" viewBox="0 0 16 16">
+    <title>Check</title>
+    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+  </symbol>
+</svg>
+
+<div class="container py-3">
+  <header>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+        <div class="avatar me-2">
+            <img src="https://cdn.dribbble.com/userupload/8487101/file/original-ff8fbd8f631da7539e9d0d86d695279b.jpeg?resize=400x300&vertical=center" alt="Tracker.com">
+        </div>
+      </a>
+
+      <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'tracker:home' %}">Tracker</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'tracker:show' %}">Show</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'notes:add' %}">Notes</a>
+        <a class="py-2 text-dark text-decoration-none" href="{% url 'notes:show_notes' %}">View notes</a>
+      </nav>
+    </div>
+
+    {%block header%}
+
+    {% endblock %}
+  </header>
+
+  {%block content%}
+
+  {% endblock %}
+</div>
+
+  </body>
+</html>

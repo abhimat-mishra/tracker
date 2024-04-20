@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+<link rel="stylesheet" href="{% static 'perform/show.css' %}">
+
+{% block content %}
+
+<h1>Here are the tasks you have done.</h1>
+
+{% regroup all_task by date as task_list %}
+
+{% for date in task_list %}
+    <h2>{{ date.grouper }}</h2>
+    <ol>
+    {% for task in date.list %}
+        <li>
+            <ul>
+                <li>{{ task.time }}</li>
+                <li>{{ task }}</li>
+                <br>
+            </ul>
+        </li>
+    {% endfor %}
+    </ol>
+    <form method="post" action="{% url 'tracker:delete_tasks' date.grouper %}">
+        {% csrf_token %}
+        <input type="hidden" name="date" value="{{ date.grouper }}">
+        <button type="submit">Delete all data of {{date.grouper}}</button>
+    </form>
+    <hr>
+{% endfor %}
+
+{% endblock %}
+

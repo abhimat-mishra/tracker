@@ -1,0 +1,77 @@
+
+{% extends "base.html" %}
+
+{% load static %} 
+
+
+{% block header %}
+    <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+      <h1 class="display-4 fw-normal">TRACKER</h1>
+      <p class="fs-5 text-muted">Efficiently manage your tasks and notes with Tracker. Our platform allows you to track tasks completed on any date, organize your notes effectively, and more. With easy-to-use tools and customizable options, staying organized has never been easier. Get started today and streamline your workflow with Tracker.</p>
+    </div>
+{% endblock %}
+
+{% block content %}
+  <main>
+    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Performance Dairy</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">Be Ready to be Productive</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Date wise collection</li>
+              <li>Listed with time</li>
+              <li>Support different languages</li>
+              <li>Can modify after</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-primary"><a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'tracker:home' %}">Start Listing</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Notes</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">Note here, Relax your mind</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li></li>
+              <li>Unlimited space</li>
+              <li>Can modify and edit after</li>
+              <li>Folder for different category</li>
+              <li>PDF supported</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary"><a class="me-3 py-2 text-white text-decoration-none" href="{% url 'notes:add' %}">Note the thought</a></button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+          <div class="card-header py-3 text-white bg-primary border-primary">
+            <h4 class="my-0 fw-normal">Voice Recorder</h4>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title pricing-card-title">Speak what your soal wants</h3>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Can record upto 10 min</li>
+              <li>15 GB of storage</li>
+              <li>Export to other devices</li>
+              <li>Auto-tune</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-primary" disabled>Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+  </main>
+  {% endblock %}
+</div>
+
+  </body>
+</html>
